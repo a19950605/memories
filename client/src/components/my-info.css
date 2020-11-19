@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Roboto+Condensed&display=swap');
+.my-info-form {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
+	height: 60vh;
+}
+
+.my-info-Textarea {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.form-item {
+	padding: 5px;
+}
+
+.button {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	padding: 10px;
+}
+
+.errorMsg {
+	color: red;
+}
+.changePw {
+	padding-top: 20%;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
