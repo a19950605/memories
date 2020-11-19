@@ -7,7 +7,7 @@ import useStyles from '../styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPosts, getPostsByTag } from '../actions/posts';
 import TemporaryDrawer from './TemporaryDrawer';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const MyPost = (props) => {
 	const [currentId, setCurrentId] = useState(0);
@@ -27,7 +27,9 @@ const MyPost = (props) => {
 		dispatch(getPosts());
 	}, [currentId, dispatch]);
 	//console.log(posts);
-
+	if (!userSignin.userInfo) {
+		return <Redirect to="/permissionDenied" />;
+	}
 	return (
 		<div>
 			<Container maxWidth="lg">

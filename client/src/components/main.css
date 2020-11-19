@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Roboto+Condensed&display=swap');
+
+.tag {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding-right: 5px;
+}
+
+.link {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-decoration: none;
+	color: white;
+}
+
+.link:hover {
+	color: red;
+}

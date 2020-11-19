@@ -1,0 +1,21 @@
+.denied {
+	font-family: 'Roboto Condensed', sans-serif;
+
+	padding-top: 20vh;
+	text-align: center;
+	font-size: 3rem;
+}
+
+.home {
+	font-family: 'Roboto Condensed', sans-serif;
+
+	display: flex;
+	justify-content: center;
+	padding-top: 5vh;
+	font-size: 1.3rem;
+	text-decoration: none;
+	color: white;
+}
+.home:hover {
+	color: gray;
+}

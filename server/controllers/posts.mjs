@@ -45,7 +45,6 @@ export const createPost = async (req, res) => {
 
 		res.status(201).json(newPostMessage);
 	} catch (error) {
-		console.log(error.message);
 		res.status(409).json({ message: error.message });
 	}
 };
@@ -95,8 +94,6 @@ export const likePost = async (req, res) => {
 export const getPostByTag = async (req, res) => {
 	const tag = req.params.tags;
 
-	console.log(req.params.tags);
-	console.log(typeof tag);
 	try {
 		const post = await PostMessage.find({ tags: tag }).populate('creator');
 
@@ -108,7 +105,6 @@ export const getPostByTag = async (req, res) => {
 
 export const like = async (req, res) => {
 	try {
-		console.log(req.body);
 		const post = await PostMessage.findById(req.params.id);
 		// Check if the post has already been liked
 		if (
@@ -124,7 +120,6 @@ export const like = async (req, res) => {
 
 		res.json(post).json(200);
 	} catch (err) {
-		console.error(err.message);
 		res.status(500).send('Server Error');
 	}
 };
@@ -152,7 +147,6 @@ export const unlike = async (req, res) => {
 
 		res.json(post).status(200);
 	} catch (err) {
-		console.error(err.message);
 		res.status(500).send('Server Error');
 	}
 };

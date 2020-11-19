@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPosts, getPostsByTag } from '../actions/posts';
 import TemporaryDrawer from './TemporaryDrawer';
 import { Link } from 'react-router-dom';
-
+import './main.css';
 const Main = (props) => {
 	const [currentId, setCurrentId] = useState(0);
 	const dispatch = useDispatch();
@@ -48,10 +48,20 @@ const Main = (props) => {
 										}}
 									>{`hello ${userSignin.userInfo.name}`}</div>
 								)}
-								{props.match.params.tag
-									? `current tag is ${props.match.params.tag} remove`
-									: ''}
-								{props.match.params.tag ? <Link to="/">Remove</Link> : ''}
+								{props.match.params.tag ? (
+									<span className="tag">
+										current tag is {props.match.params.tag} remove
+									</span>
+								) : (
+									''
+								)}
+								{props.match.params.tag ? (
+									<Link className="link" to="/">
+										Remove
+									</Link>
+								) : (
+									''
+								)}
 							</Grid>
 							<Grid item xs={12} sm={7}>
 								<Posts setCurrentId={setCurrentId} posts={posts} />

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPosts, getPostsByTag } from '../actions/posts';
 import TemporaryDrawer from './TemporaryDrawer';
 import { Link } from 'react-router-dom';
-
+import './permissionDenied.css';
 const PermissionDenied = (props) => {
 	const classes = useStyles();
 
@@ -23,12 +23,12 @@ const PermissionDenied = (props) => {
 				</AppBar>
 				<Grow in>
 					<Container>
-						<Grid container justify="space-between" alignItems="stretch" spacing={3}>
-							<div>permission denied</div>
-							<div>
-								you are not allow to access this page, try to login to solve this
-								problem
-							</div>
+						<Grid>
+							<div className="denied">You are not allow to access</div>
+
+							<Link to="/" className="home">
+								Back to home
+							</Link>
 						</Grid>
 					</Container>
 				</Grow>
